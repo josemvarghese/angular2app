@@ -10,13 +10,18 @@ var AppComponent = (function () {
     function AppComponent() {
         this.name = 'Jose M Varghese';
         this.email = 'jose@mail.com';
+        this.address = {
+            city: 'Angmaly',
+            street: 'Mookkkannoor',
+            state: 'Kerala',
+        };
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<h1>Hello {{name}}</h1>\n  <div>email:{{email}}</div>",
+        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
