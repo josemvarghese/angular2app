@@ -10,10 +10,10 @@ import { Component } from '@angular/core';
 })
 export class UserComponent  {
   name = 'Jose M Varghese';
-  email = 'jose@mail.com',
+  email = 'jose@mail.com';
   address = {
     city:'Angmaly',
     street:'Mookkkannoor',
     state:'Kerala',
-  }
+  };
  }
