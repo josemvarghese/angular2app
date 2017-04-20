@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
 var UserComponent = (function () {
     function UserComponent() {
@@ -15,14 +18,16 @@ var UserComponent = (function () {
             street: 'Mookkkannoor',
             state: 'Kerala',
         };
+        this.hobbies = ['afsdaf', 'sdafas', 'asdfsadf'];
     }
     return UserComponent;
 }());
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user',
-        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>",
-    })
+        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <h3> Hobbies</h3>\n  <p>{{hobbies}}</p>\n  ",
+    }),
+    __metadata("design:paramtypes", [])
 ], UserComponent);
 exports.UserComponent = UserComponent;
 //# sourceMappingURL=user.component.js.map
