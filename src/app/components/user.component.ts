@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
   <p>Street:{{address.street}}</p>
   <p>State:{{address.state}}</p>
   <h3> Hobbies</h3>
-  <p>{{hobbies}}</p>
+  <ul>
+    <li *ngFor="let hobby of hobbies"> {{hobby}}</li>
+  </ul>
   `,
 })
 export class UserComponent  {

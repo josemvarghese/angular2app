@@ -25,7 +25,7 @@ var UserComponent = (function () {
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user',
-        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <h3> Hobbies</h3>\n  <p>{{hobbies}}</p>\n  ",
+        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <h3> Hobbies</h3>\n  <ul>\n    <li *ngFor=\"let hobby of hobbies\"> {{hobby}}</li>\n  </ul>\n  ",
     }),
     __metadata("design:paramtypes", [])
 ], UserComponent);
