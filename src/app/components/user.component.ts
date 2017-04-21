@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
   <p>City:{{address.city}}</p>
   <p>Street:{{address.street}}</p>
   <p>State:{{address.state}}</p>
+  <div *ngIf="showHobbies">
   <h3> Hobbies</h3>
   <ul>
     <li *ngFor="let hobby of hobbies"> {{hobby}}</li>
   </ul>
+  </div>
   `,
 })
 export class UserComponent  {
@@ -18,6 +20,7 @@ export class UserComponent  {
   email:string;
   address:address;
   hobbies:string[];
+  showHobbies:boolean;
   constructor(){
     this.name = 'Jose M Varghese';
     this.email = 'jose@mail.com';
@@ -27,6 +30,7 @@ export class UserComponent  {
       state:'Kerala',
     };
     this.hobbies = ['afsdaf','sdafas','asdfsadf'];
+    this.showHobbies = false;
   }
  }
 
