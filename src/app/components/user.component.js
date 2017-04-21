@@ -21,12 +21,20 @@ var UserComponent = (function () {
         this.hobbies = ['afsdaf', 'sdafas', 'asdfsadf'];
         this.showHobbies = false;
     }
+    UserComponent.prototype.toggileHobbies = function () {
+        if (this.showHobbies == false) {
+            this.showHobbies = true;
+        }
+        else {
+            this.showHobbies = false;
+        }
+    };
     return UserComponent;
 }());
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user',
-        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <div *ngIf=\"showHobbies\">\n  <h3> Hobbies</h3>\n  <ul>\n    <li *ngFor=\"let hobby of hobbies\"> {{hobby}}</li>\n  </ul>\n  </div>\n  ",
+        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <button (click)=\"toggileHobbies()\"> {{showHobbies?'Hide Hobbies':'Show Hobbies'}}</button>\n  <div *ngIf=\"showHobbies\">\n  <h3> Hobbies</h3>\n  <ul>\n    <li *ngFor=\"let hobby of hobbies\"> {{hobby}}</li>\n  </ul>\n  </div>\n  ",
     }),
     __metadata("design:paramtypes", [])
 ], UserComponent);
