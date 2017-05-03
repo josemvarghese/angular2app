@@ -29,12 +29,19 @@ var UserComponent = (function () {
             this.showHobbies = false;
         }
     };
+    UserComponent.prototype.deleteHobby = function (i) {
+        console.log(i);
+        this.hobbies.splice(i, 1);
+    };
+    UserComponent.prototype.addHobby = function (hobby) {
+        this.hobbies.push(hobby);
+    };
     return UserComponent;
 }());
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user',
-        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <button (click)=\"toggileHobbies()\"> {{showHobbies?'Hide Hobbies':'Show Hobbies'}}</button>\n  <div *ngIf=\"showHobbies\">\n  <h3> Hobbies</h3>\n  <ul>\n    <li *ngFor=\"let hobby of hobbies\"> {{hobby}}</li>\n  </ul>\n  </div>\n  ",
+        template: "<h1>Hello {{name}}</h1>\n  <p>email:{{email}}</p>\n  <p>City:{{address.city}}</p>\n  <p>Street:{{address.street}}</p>\n  <p>State:{{address.state}}</p>\n  <button (click)=\"toggileHobbies()\"> {{showHobbies?'Hide Hobbies':'Show Hobbies'}}</button>\n  <br/>\n  <form (submit)=\"addHobby(hobby.value)\" >\n    <label>Add hobby</label>\n    <input type=\"text\" #hobby/>\n  </form>\n  <br/>\n  <div *ngIf=\"showHobbies\">\n  <h3> Hobbies</h3>\n  <ul>\n    <li *ngFor=\"let hobby of hobbies;let i=index\"> {{hobby}}\n    <button (click)='deleteHobby(i)'>X</button>\n    </li>\n  </ul>\n\n  </div>\n  <br/>\n  <h3> Edit User </h3>\n  <form>\n  <label>Name:</label>\n  <input type='text'  name=\"name\" [(ngModel)]=\"name\"/><br/>\n  <label>Email:</label>\n  <input type='email'  name=\"email\" [(ngModel)]=\"email\"/><br/>\n  <label>City:</label>\n  <input type='text'  name=\"city\" [(ngModel)]=\"address.city\"/><br/>\n  <label>Street:</label>\n  <input type='text'  name=\"street\" [(ngModel)]=\"address.street\"/><br/>\n  <label>State:</label>\n  <input type='text'  name=\"state\" [(ngModel)]=\"address.state\"/><br/>\n  </form>\n  ",
     }),
     __metadata("design:paramtypes", [])
 ], UserComponent);
